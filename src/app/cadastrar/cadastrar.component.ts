@@ -11,7 +11,7 @@ import { AuthService } from '../servece/auth.service';
 export class CadastrarComponent implements OnInit {
 
   user: User = new User
-  confirmarSenha: String
+  confirmarSenha: string
   tipoUsuario: string
 
   constructor(
