@@ -18,7 +18,20 @@ export class PostagemService {
      return this.http.get<Postagem[]>('https://mayarablogpessoal.herokuapp.com/Postagens', this.token)
    }
 
+   getByIdPostagem(id: number): Observable<Postagem>{
+     return this.http.get<Postagem>(`https://mayarablogpessoal.herokuapp.com/Postagens/${id}`, this.token)
+            
+   }
+
    postPostagem(postagem: Postagem) : Observable<Postagem>{
      return this.http.post<Postagem>('https://mayarablogpessoal.herokuapp.com/Postagens', postagem, this.token)
    }
+    
+   putPostagem(postagem: Postagem): Observable<Postagem>{
+     return this.http.put<Postagem>('https://mayarablogpessoal.herokuapp.com/Postagens', postagem, this.token)
+   }
+   deletePostagem(id:number){
+     return this.http.delete<Postagem>(`https://mayarablogpessoal.herokuapp.com/Postagens/${id}`, this.token)
+   }
 }
+
